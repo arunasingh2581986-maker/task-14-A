@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> 
+        Loops
+    </h1>
+
+     <script>
+
+
+           let numbers = [153,139,17,28,9 ]
+
+           for (let n of numbers) {
+           console.log("\nNumber: " , n);
+           
+
+          let sum = 0;
+          for ( let i=1; i <= n; i++) {
+            sum += i;
+         }
+          console.log("Sum of first " ,n , " numbers: " , sum);
+         
+           console.log("table of " , n);
+          for (let i = 1; i <= 10; i++) {
+          console.log(n + " x " +i + " = " + (n * i));
+          }
+
+           let isPrime = true;
+
+          if (n <= 1) {
+            isPrime = false;
+          } else {
+            for (let i = 2; i <= Math.sqrt(n); i++) {
+             if (n % i === 0) {
+                isPrime = false;
+                break;
+              }
+            }
+          }
+           console.log( " is it a prime? " , isPrime ? "Yes" : "No");
+
+         let factors = [];
+
+          for (let i = 1; i <= n; i++) {
+           if (n % i === 0) {
+              factors.push(i);
+            }
+         }
+          console.log("Factors : " , factors.join(", "));
+
+         let temp = n;
+         let digitsum = 0;
+
+          while (temp > 0) {
+            digitsum += temp % 10;
+            temp = Math.floor(temp / 10);
+         }
+         console.log("Sum of its digits: " , digitsum);
+
+          let digits = n.toString().length;
+          let temp2 = n;
+          let armstrongSum = 0;
+
+          while (temp2 > 0) {
+            let digit = temp2 % 10;
+            armstrongSum += Math.pow(digit, digits);
+            temp2 = Math.floor(temp2 / 10);
+          }
+         if (armstrongSum === n) {
+            console.log(" is an Armstrong number?yes");
+          } else {
+            console.log(" is an Armstrong number?no");
+          }
+        }
+        
+    </script>
+</body>
+</html>  
+
+        
+   
